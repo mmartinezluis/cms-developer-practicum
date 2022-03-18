@@ -1,0 +1,67 @@
+[
+    {
+        "label": "Accent Color",
+        "name": "accent_color",
+        "type": "color",
+        "default": {
+            "color": "#F8FAFC",
+            "opacity": 100
+        },
+        "visibility": {
+            "hidden_subfields": {
+                "opacity": true
+            }
+        },
+        "help_text": "The header and footer background color is controlled by this field."
+    },
+    {
+        "name" : "font",
+        "label" : "Font",
+        "required" : false,
+        "locked" : false,
+        "load_external_fonts" : true,
+        "type" : "font",
+        "default" : {
+            "size" : 12,
+            "font":"Merriweather",
+            "font_set":"GOOGLE",
+            "size_unit" : "px",
+            "color" : "#000",
+            "styles" : { }
+        },
+        "visibility" : {
+            "hidden_subfields" : {
+                "font": false,
+                "size": true,
+                "color": true
+            }
+        },
+        "help_text": "The header and footer font and font type are controlled by these fields."
+    },
+    {
+        "label": "Vertical spacing",
+        "name": "vertical_spacing",
+        "type": "number",
+        "display": "slider",
+        "max": 500,
+        "min": 0,
+        "suffix": "px",
+        "default": 80,
+        "help_text": "Adjusts the vertical padding of dnd sections."
+      },
+      {
+        "label": "Maximum content width",
+        "name": "maximum_content_width",
+        "type": "number",
+        "display": "slider",
+        "max": 2500,
+        "min": 900,
+        "suffix": "px",
+        "default": 1251,
+        "visibility": {
+            "hidden": true
+        },
+        "help_text": "Adjusts the horizontal spacing of dnd sections."
+      }
+
+]

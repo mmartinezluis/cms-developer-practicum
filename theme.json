@@ -1,0 +1,16 @@
+{
+    "name": "cms_developer_practicum",
+    "label": "CMS DEVELOPER PRACTICUM",
+    "preview_path": "./templates/index.html",
+    "enable_domain_stylesheets": false,
+    "responsive_breakpoints": [
+      {
+        "name": "mobile",
+        "mediaQuery": "@media (max-width: 767px)",
+        "previewWidth": {
+          "value": 477
+        }
+      }
+    ]
+  }
+  

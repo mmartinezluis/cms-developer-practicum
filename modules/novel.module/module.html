@@ -1,0 +1,17 @@
+<div class="novel_container">
+  {% for item in module.field_group %}
+    <span class="novel_item">
+      {% if item.image_field.src %}
+        <img class="novel__picture" src={{item.image_field.src}} alt={{item.alt}} max-width=605 >
+      {% endif %}
+      <h3>{{item.text_one}}</h3>
+      {{item.choice_field}}
+    </span>
+  {% endfor %}
+</div>
+
+
+
+{# https://fs.hubspotusercontent00.net/hubfs/21510302/Portrait%20of%20a%20pensive%20businessman%20touching%20his%20chin%20over%20gray%20background.jpeg #}
+
+{# "https://fs.hubspotusercontent00.net/hubfs/21510302/Imported%20images/profile-pic-sally.svg" #}

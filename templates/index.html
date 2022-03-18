@@ -1,0 +1,130 @@
+<!--
+    templateType: page
+    label: Page template
+    isAvailableForNewContent: true
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+
+{########## Single page for custom object ##########}
+
+    {% if dynamic_page_crm_object %}
+
+      {% set employee = dynamic_page_crm_object %}
+        
+      {# The three below 'div's mimic HubSpot's styling for dnd_section, dnd_column, and dnd_row when used consecutively #}
+      <div class="dnd-section dnd-column">
+      <div class="row-fluid">      
+      <div class="span12">      
+
+        <div class="employee">
+            <h1>One of Our Employees of the Month</h1>
+            <img class="image-normalization" src={{employee.profile_pic}} alt="employee profile picture" >
+            <h1>
+              {{employee.name}}
+            </h1>
+            <p>
+              {{employee.title}}
+            </p>
+            {{employee.bio}}
+        </div>
+
+      </div>
+      </div>
+      </div>
+
+      
+{########## Index page for custom objects ##########}
+
+    {% elif dynamic_page_crm_object_type_fqn %}
+
+      
+      {% dnd_area 'index-page4933' class='class' %}
+
+
+        {% dnd_section %}
+          {% dnd_column %}
+            {% dnd_row %}
+              {% dnd_module "company-mission" 
+                path='@hubspot/rich_text' 
+                html="<h1>Our Mission</h1>"
+              %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+
+            {% dnd_row %}
+              {% dnd_module  
+                path="@hubspot/linked_image", 
+                label="linked_image" 
+                img = {
+                  "alt": "Company building picture",
+                  "loading": "lazy",
+                  "max_height": 451,
+                  "max_width": 605,
+                  "size_type": "auto_custom_max",
+                  "src": "https://fs.hubspotusercontent00.net/hubfs/21510302/Aerial%20view%20of%20Salvador%20City%20in%20Bahia%2c%20Brazil-1.jpeg"
+                },
+                width=6,
+                offset=0,
+              %}
+              {% end_dnd_module%}
+              {% dnd_module "page_template_rich_text" 
+                path='@hubspot/rich_text' 
+                html="<h2>Who We Are</h2><p>We embrace agility and rapid feedback implementation."
+                width=6,
+                offset=6
+              %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+            {% dnd_row %}
+              {% dnd_module 'our-team'
+                path='@hubspot/rich_text'
+                html="<h1>Our Team</h1>"
+              %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+            {% dnd_row %}
+              {% dnd_module "employees_field_group"
+                path="../modules/novel.module"
+              %}
+            {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+        {% end_dnd_section %}
+
+      {% end_dnd_area %}
+
+
+      {% set employees = crm_objects(dynamic_page_crm_object_type_fqn, 'limit=10', 'name, title, profile_pic, bio') %}
+
+      {# The three below 'div's mimic HubSpot's styling for dnd_section, dnd_column, and dnd_row when used consecutively #}
+      <div class="dnd-section dnd-column" style="padding-top: 0px;">
+      <div class="row-fluid">      
+      <div class="span12">      
+
+        <h1>Employees of the Month</h1>
+        <div class="employees">
+          {% for employee in employees.results %}    
+            <a href="{{request.path}}/{{employee.name}}">
+              <div class="employee">
+                  <img class="image-normalization" src={{employee.profile_pic}} alt="employee profile picture" >
+                  <h1>
+                    {{employee.name}}
+                  </h1>
+                  <p>
+                    {{employee.title}}
+                  </p>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+
+      </div>
+      </div>
+      </div>
+  {% endif%}
+
+    
+{% endblock body %}

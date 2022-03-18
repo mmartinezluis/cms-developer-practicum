@@ -1,0 +1,53 @@
+.novel_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px 0px;
+}
+/* Splendid handling of image resizing  */
+.novel_item {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+.novel__picture {
+  display: block;
+/*   Max width '100%' makes image expand vertically and horizontally until filling its parent's container width; basically, the image resizes along with its parent container */
+  max-width: 100%;
+  /* Margin 'auto' prevents image height from overflowing its parent's container height; combined with max-width '100%' the height of the image will grow until its parent's container max width is reached */
+  margin: auto;
+}
+/* Splendid handling of image resizing  */
+
+/*************Responsive Styles*****************/
+@media only screen and (max-width: 319px) and (min-width: 0px) {
+  .novel_container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/***************iPhone Portrait**************/
+@media only screen and (max-width: 479px) and (min-width: 320px){
+  .novel_container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/**********************iPhone Landscape*************/
+@media only screen and (max-width: 767px) and (min-width: 480px){
+  .novel_container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/*************************iPad Portrait***************/
+/* @media only screen and (max-width: 985px) and (min-width: 768px){ */
+@media only screen and (max-width: 900px) and (min-width: 768px){
+  .novel_container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/**************iPad Landscape***************/
+/* @media only screen and ( max-width: 1024px ) and (min-width: 986px){ */
+@media only screen and ( max-width: 1024px ) and (min-width: 899px){
+}

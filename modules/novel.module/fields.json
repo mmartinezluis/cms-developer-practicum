@@ -1,0 +1,141 @@
+[ {
+  "id" : "b91fd955-3ae5-c6bd-e99f-38d18e28e091",
+  "name" : "field_group",
+  "display_width" : null,
+  "label" : "Item",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 9,
+    "sorting_label_field" : null,
+    "default" : 6
+  },
+  "children" : [ {
+    "id" : "7c1fc46b-9d43-c0eb-9f0b-882627d86123",
+    "name" : "image_field",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://fs.hubspotusercontent00.net/hubfs/21510302/Portrait%20of%20a%20pensive%20businessman%20touching%20his%20chin%20over%20gray%20background.jpeg",
+      "alt" : "profile-pic-employee",
+      "loading" : "lazy",
+      "width" : 100,
+      "height" : 100,
+      "max_width" : 100,
+      "max_height" : 100
+    }
+  }, {
+    "id" : "96000c6b-28c1-e38a-de56-58536b3c0bcb",
+    "name" : "text_one",
+    "display_width" : null,
+    "label" : "Text One",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Michael Brown (employee name)"
+  }, {
+    "id" : "d3e68cde-8be3-3741-da9c-1f4fb56d6775",
+    "name" : "choice_field",
+    "display_width" : null,
+    "label" : "Choice",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "CEO", "CEO" ], [ "CTO", "CTO" ], [ "HR", "HR" ], [ "Manager", "Manager" ], [ "Design", "Design" ], [ "Software", "Software" ] ],
+    "type" : "choice",
+    "default" : "Manager"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://fs.hubspotusercontent00.net/hubfs/21510302/Imported%20images/profile-pic-sally.svg",
+      "alt" : "profile-pic-employee",
+      "loading" : "lazy",
+      "width" : 100,
+      "height" : 100,
+      "max_width" : 100,
+      "max_height" : 100
+    },
+    "text_one" : "Sally Crown (employee name)",
+    "choice_field" : "Manager"
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://fs.hubspotusercontent00.net/hubfs/21510302/Portrait%20of%20a%20pensive%20businessman%20touching%20his%20chin%20over%20gray%20background.jpeg",
+      "alt" : "profile-pic-employee",
+      "loading" : "lazy",
+      "width" : 100,
+      "height" : 100,
+      "max_width" : 100,
+      "max_height" : 100
+    },
+    "text_one" : "Michael Brown (employee name)",
+    "choice_field" : "Manager"
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://fs.hubspotusercontent00.net/hubfs/21510302/Imported%20images/profile-pic-sally.svg",
+      "alt" : "profile-pic-employee",
+      "loading" : "lazy",
+      "width" : 100,
+      "height" : 100,
+      "max_width" : 100,
+      "max_height" : 100
+    },
+    "text_one" : "Sally Crown (employee name)",
+    "choice_field" : "Manager"
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://fs.hubspotusercontent00.net/hubfs/21510302/Portrait%20of%20a%20pensive%20businessman%20touching%20his%20chin%20over%20gray%20background.jpeg",
+      "alt" : "profile-pic-employee",
+      "loading" : "lazy",
+      "width" : 100,
+      "height" : 100,
+      "max_width" : 100,
+      "max_height" : 100
+    },
+    "text_one" : "Michael Brown (employee name)",
+    "choice_field" : "Manager"
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://fs.hubspotusercontent00.net/hubfs/21510302/Imported%20images/profile-pic-sally.svg",
+      "alt" : "profile-pic-employee",
+      "loading" : "lazy",
+      "width" : 100,
+      "height" : 100,
+      "max_width" : 100,
+      "max_height" : 100
+    },
+    "text_one" : "Sally Crown (employee name)",
+    "choice_field" : "Manager"
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://fs.hubspotusercontent00.net/hubfs/21510302/Portrait%20of%20a%20pensive%20businessman%20touching%20his%20chin%20over%20gray%20background.jpeg",
+      "alt" : "profile-pic-employee",
+      "loading" : "lazy",
+      "width" : 100,
+      "height" : 100,
+      "max_width" : 100,
+      "max_height" : 100
+    },
+    "text_one" : "Michael Brown (employee name)",
+    "choice_field" : "Manager"
+  } ]
+} ]

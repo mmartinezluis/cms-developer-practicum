@@ -1,0 +1,92 @@
+<!--
+  templateType: global_partial
+  label: Website header
+-->
+<header class="header">
+
+  {# The link below is used for a navigation skipper which allows users navigating the site with their keyboard to skip over the site navigation. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+
+  
+  {# Top header drag and drop area #}
+
+  {% dnd_area "header-top"
+    label="Top header",
+    class="content-wrapper"
+  %}
+  {% end_dnd_area %}
+
+  {# Main header #}
+
+  <div class="header__container content-wrapper">
+
+    {# Header logo column #}
+
+    <div class="header__logo header__logo--main">
+      {% module "site_logo" path="@hubspot/logo" %}
+      <h1>Embrace the DevOps Culture</h1>
+      {% module "one_line_text"
+        path="@hubspot/text"
+        value="DevOps promotes development engineers and operations engineers to work together during the full product development lifecycle."
+        %}
+    </div>
+
+    
+    {# Header navigation column #}
+
+    <div class="header__column">
+
+      {# Header navigation row one #}
+
+      <div class="header__row-1">
+        {% if content.translated_content.values()|selectattr("published")|length || is_listing_view && group.translations %}
+          <div class="header__language-switcher header--element">
+            <div class="header__language-switcher--label">
+              {% module "language-switcher"
+                path="@hubspot/language_switcher",
+                label="Language switcher",
+                display_mode="localized"
+              %}
+              <div class="header__language-switcher--label-current"> {{ locale_name(locale) }}</div>
+            </div>
+          </div>
+        {% endif %}
+        <div class="header__search header--element">
+          {% module "simple_menu" 
+            path="@hubspot/simple_menu", 
+            label="simple_menu" 
+          %}
+        </div>
+      </div>
+
+      {# Header navigation row two #}
+
+      <div class="header__row-2">
+        <div class="header--toggle header__navigation--toggle"></div>
+        {% if content.translated_content|length || is_listing_view && group.translations %}
+          <div class="header--toggle header__language-switcher--toggle"></div>
+        {% endif %}
+        <div class="header--toggle header__search--toggle"></div>
+        <div class="header__close--toggle"></div>
+        <div class="header__navigation header--element">
+          {# {% module "navigation-primary"
+            path="../../modules/menu",
+            label="Primary navigation"
+          %} #}
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  {# Bottom header drag and drop area #}
+
+  {% dnd_area "header-bottom"
+    label="Bottom header",
+    class="content-wrapper"
+  %}
+  {% end_dnd_area %}
+
+</header>
+
+

@@ -1,0 +1,39 @@
+
+{% set bg_color_header_and_footer = theme.accent_color.color %}
+{% set dnd_section_padding = theme.vertical_spacing ~ 'px ' ~ '1rem' %}
+{% set container_width = theme.maximum_content_width ~ 'px' %}
+
+
+          /* DND SECTIONS */
+
+/* Adds vertical spacing for the dnd sections */
+.dnd-section,
+.content-wrapper--vertical-spacing {
+  padding: {{ dnd_section_padding }};
+}
+
+/* Controls left and right margin in header */
+.content-wrapper {
+  max-width: {{ container_width }};
+}
+
+/* Controls left and right margin of dnd sections */
+.dnd-section > .row-fluid {
+  max-width: {{ container_width }};
+}
+
+          /* HEARDER AND FOOTER  */
+
+/* Controls background color of header and footer */
+.header, 
+.footer {
+  background-color: {{bg_color_header_and_footer}}
+}
+
+        /* CUSTOM CODE FOR NORMALIZING IMAGES RESPONSIVENESS */
+        
+.image-normalization {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}

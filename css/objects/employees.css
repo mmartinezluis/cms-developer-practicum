@@ -1,0 +1,22 @@
+.employees {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem 1rem;
+}
+
+.employee {
+  max-width: 800px;
+  margin: auto;
+}
+
+@media only screen and (max-width: 900px) and (min-width: 480px){
+  .employees {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 479px) and (min-width: 50px){
+  .employees {
+    grid-template-columns: 1fr;
+  }
+}
